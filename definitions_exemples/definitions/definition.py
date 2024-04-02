@@ -17,7 +17,7 @@ def get_definition(li_element: str):
 
 
 if __name__ == '__main__':
-    html_content = """<li><span class="emploi"><i>(<span class="texte"><a href="/wiki/Annexe:Glossaire_grammatical#P" 
+    li_element = """<li><span class="emploi"><i>(<span class="texte"><a href="/wiki/Annexe:Glossaire_grammatical#P" 
     title="Annexe:Glossaire grammatical">En particulier</a></span>)</i></span> Faire <a href="/wiki/subsister" 
     title="subsister">subsister</a> en <a href="/wiki/fournir" title="fournir">fournissant</a> les choses <a 
     href="/wiki/n%C3%A9cessaire" title="nécessaire">nécessaires</a>. <ul><li><i><b>Entretenir</b> un grand train, 
@@ -32,4 +32,4 @@ if __name__ == '__main__':
     de vêtements.</i></li> <li><i>Il a de quoi s’<b>entretenir</b> honnêtement.</i></li> <li><i>Il s’entretient avec 
     ce qu’il gagne, de ce qu’il gagne.</i></li> <li><i>Il s’entretient avec la pension que lui donne son 
     père.</i></li> <li><i>Je donne tant à mon domestique pour s’<b>entretenir</b>.</i></li></ul></li>"""
-    print(get_definition(html_content))
+    print(get_definition(li_element))

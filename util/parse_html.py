@@ -14,3 +14,8 @@ def get_html_content(url: str):
 
 def parse_html(html_string: str):
     return BeautifulSoup(html_string, "html.parser")
+
+
+if __name__ == "__main__":
+    url = "https://fr.wiktionary.org/wiki/entretenir"
+    print(get_html_content(url))

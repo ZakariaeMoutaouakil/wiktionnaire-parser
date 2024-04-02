@@ -1,6 +1,6 @@
 from definitions_exemples.definitions.definition import get_definition
 from definitions_exemples.exemples.exemple import get_examples
-from util.parse_html import parse_html
+from util.parse_html import parse_html, get_html_content
 
 
 def get_definitions_and_examples_html(html_content: str):
@@ -16,11 +16,28 @@ def get_definitions_and_examples_html(html_content: str):
     return [str(li_element) for li_element in ol_element.find_all("li", recursive=False)]
 
 
-def get_definition_and_examples_json(li_element):
-    return {"definition": get_definition(li_element), "exemples": get_examples(li_element)}
+def get_definition_and_examples_json(li_element: str):
+    exemples = get_examples(li_element)
+
+    if exemples:
+        return {"définition": get_definition(li_element), "exemples": exemples}
+
+    return {"définition": get_definition(li_element)}
 
 
-def get_definitions_and_examples_json(url):
-    li_elements = get_definitions_and_examples_html(url)
+def get_definitions_and_examples_json(html_content: str):
+    li_elements = get_definitions_and_examples_html(html_content)
 
     return [get_definition_and_examples_json(li_element) for li_element in li_elements]
+
+
+if __name__ == "__main__":
+    url = "https://fr.wiktionary.org/wiki/entretenir"
+    html_content = get_html_content(url)
+    print(get_definitions_and_examples_html(html_content))
+    print(get_definitions_and_examples_json(html_content))
+
+    url = "https://fr.wiktionary.org/wiki/verrou"
+    html_content = get_html_content(url)
+    print(get_definitions_and_examples_html(html_content))
+    print(get_definitions_and_examples_json(html_content))
