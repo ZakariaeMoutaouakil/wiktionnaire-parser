@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+from util.word_to_url import lookup_word
+
 
 def get_html_content(url: str):
     response = requests.get(url)
@@ -17,5 +19,6 @@ def parse_html(html_string: str):
 
 
 if __name__ == "__main__":
-    url = "https://fr.wiktionary.org/wiki/entretenir"
+    url = lookup_word(word="entretenir")
+    print(url)
     print(get_html_content(url))
