@@ -1,7 +1,7 @@
 import re
 
 
-def extract_number_from_string(input_string):
+def extract_number_from_string(input_string: str) -> int | None:
     """
     Extracts a number from a string using regular expressions.
 
@@ -21,5 +21,5 @@ def extract_number_from_string(input_string):
     if numbers:
         extracted_number = int(numbers[0])
         return extracted_number
-    else:
-        return None
+
+    return None

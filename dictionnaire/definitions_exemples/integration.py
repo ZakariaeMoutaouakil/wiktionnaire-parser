@@ -1,5 +1,5 @@
-from definitions_exemples.definitions.definition import get_definition
-from definitions_exemples.exemples.exemple import get_examples
+from dictionnaire.definitions_exemples.definitions.definition import get_definition
+from dictionnaire.definitions_exemples.exemples.exemple import get_examples
 from util.word_to_url import lookup_word
 from util.dict_to_json import pretty_json
 from util.parse_html import parse_html, get_html_content
