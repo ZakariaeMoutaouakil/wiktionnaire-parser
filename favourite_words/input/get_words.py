@@ -1,10 +1,7 @@
-from typing import List
-
-
-def get_entries_from_console() -> List[str]:
+def get_entries_from_console():
     entries = []
     while True:
-        entry = input("Enter an entry (or type 'q' to finish): ").strip()
+        entry = input("Enter a word (or type 'q' to finish): ").strip()
         if entry.lower() == 'q':
             break
         if entry:  # Check if entry is not empty

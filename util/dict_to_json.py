@@ -1,8 +1,8 @@
 import json
-from typing import Dict, List
+from typing import Dict, List, Union
 
 
-def pretty_json(dictionary: List[Dict]) -> str:
+def pretty_json(dictionary: Union[List[Dict], Dict]):
     """
     Print a dictionary as a pretty JSON string with indentation.
 

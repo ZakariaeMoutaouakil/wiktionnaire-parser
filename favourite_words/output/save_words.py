@@ -16,5 +16,5 @@ def save_words(strings: List[str], file_name="vocab.txt"):
 
 if __name__ == "__main__":
     # Example usage:
-    list_of_strings = ["apple", "fruit", "red"]
+    list_of_strings = ["orange", "fruit", "pomme"]
     save_words(strings=list_of_strings)
