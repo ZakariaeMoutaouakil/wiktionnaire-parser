@@ -10,16 +10,24 @@ def guess_from_definition():
     word = choice(all_defs)
     definitions = next(iter(word.values()), None)
     word_sense = choice(definitions)
-    answer = input("Devine le mot: " + word_sense['définition'] + "\n")
+
+    print("Devine le mot: " + word_sense['définition'])
+    print("Parmi les mots suivants: " + str(words))
+
+    answer = input()
     true_answer = next(iter(word.keys()), None)
+
     if answer.lower() == true_answer:
         print("Bonne réponse!")
 
-        exemples = word_sense['exemples']
-        if exemples:
+        try:
+            exemples = word_sense['exemples']
             print("Voici des exemples: ")
-            for exemple in word_sense['exemples']:
+            for exemple in exemples:
                 print(exemple)
+        except KeyError:
+            pass
+
     else:
         print("Le vrai mot est: \"" + true_answer + "\".")
 
